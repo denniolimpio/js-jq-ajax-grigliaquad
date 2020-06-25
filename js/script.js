@@ -7,10 +7,14 @@ $(document).ready(function() {
     //dichiaro la mia variabile elemento cliccato
     var elementoCliccato = this;
 
+    // API:
+    // invoca un numero da 1 a 9
     $.ajax({
 
       url: 'https://flynn.boolean.careers/exercises/api/random/int',
       method: 'GET',
+
+      // API caricato correttamente
 
       success: function(numero) {
 
@@ -20,7 +24,7 @@ $(document).ready(function() {
 
         $(elementoCliccato).text(numeroRandom);
 
-        // ad ogni clicco rimuovo la classe preesistente
+        // ad ogni click rimuovo la classe preesistente
 
         $(elementoCliccato).removeClass("yellow");
         $(elementoCliccato).removeClass("green");
@@ -44,6 +48,8 @@ $(document).ready(function() {
 
       },
 
+    // API non caricato
+    
       error: function() {
 
         alert("Errore url");
